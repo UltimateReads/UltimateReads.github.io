@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AI Test Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <h1 class="title">AI Test Generator</h1>
+    <p class="subtitle">Generate quizzes instantly from your text!</p>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="toggle-icon">🌞</span>
+    <span class="toggle-icon">🌙</span>
+  </button>
+</header>
+
+<!-- Test Generator Section -->
+<section class="test-generator">
+  <div class="container">
+    <h2>Generate Test from Your Book</h2>
+    <p>Paste the content of your book or study material below, and the AI will generate a quiz for you!</p>
+
+    <!-- Text input for content -->
+    <textarea id="bookContent" rows="10" placeholder="Paste the book or chapter content here..."></textarea><br><br>
+
+    <!-- Button to generate questions -->
+    <button onclick="generateAITest()">Generate Test</button>
+
+    <!-- Test Form (hidden initially) -->
+    <form id="quizForm" style="display: none;" onsubmit="evaluateTest(event)">
+      <div id="questionsContainer"></div>
+      <button type="submit">Submit Quiz</button>
+    </form>
+
+    <!-- Results Section (hidden initially) -->
+    <div id="result" class="result" style="display: none;">
+      <h3>Your Score: <span id="score">0</span> / <span id="totalQuestions">0</span></h3>
+      <button onclick="resetQuiz()">Try Again</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 AI Test Generator. All rights reserved.</p>
+  <p>
+    Back to <a href="index.html">Home</a>
+  </p>
+</footer>
+
+<script src="test.js"></script>
+</body>
+</html>
